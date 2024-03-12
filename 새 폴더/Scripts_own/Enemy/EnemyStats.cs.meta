@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 823b5b6cc7a39664999086ca1e391f43
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - hp: {instanceID: 0}
+  - BloodFX: {instanceID: 0}
+  - bloodPos: {instanceID: 0}
+  - mat: {instanceID: 0}
+  - EnemeyDieClip: {fileID: 8300000, guid: 0f5d96cfe8a7c2a4ca66e95830a0b567, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
