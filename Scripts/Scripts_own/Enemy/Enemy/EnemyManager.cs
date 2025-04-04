@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 
-public class EnemyManager : MonoBehaviour
+public class EnemyManager : MonoBehaviour // baseEnemy
 {
     public bool isPreformingAction;
     private EnemyLocomotionManager enemyLocomotionManager;
