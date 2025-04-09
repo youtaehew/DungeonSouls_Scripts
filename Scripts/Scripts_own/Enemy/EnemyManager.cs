@@ -57,34 +57,25 @@ public class EnemyManager : MonoBehaviour // baseEnemy
     
     private void Start()
     {
-        // navMeshAgent.enabled = false;
         navmeshAgent.enabled = true;
         enemyRigid.isKinematic = true;
         canvasGroup =  transform.Find("HpCanvas").GetComponent<CanvasGroup>();
         canvasGroup.alpha = 0;
-        
+        isInteracting = enemyAni.ani.GetBool("isInteracting");
     }
 
     private void Update()
     {
         HandleRecoveryTimer();
         HandleStateMachine();
-
-        
-        isInteracting = enemyAni.ani.GetBool("isInteracting");//
     }
 
-    
-
-
-    public void isPurse(bool a)
+    private void SwitchToNextState(State state) // 다른 State로 변경한다
     {
-        canvasGroup.alpha = 1;
-        vThirdPersonController.isPursure = a;
+        currentState = state;
     }
-    
 
-    private void HandleStateMachine()
+    private void HandleStateMachine() //상태를 관리한다
     {
         if (enemyStats.isDead == true) return;
         if (currentState != null)
@@ -97,15 +88,17 @@ public class EnemyManager : MonoBehaviour // baseEnemy
         }
     }
 
+    public void isPurse(bool a)
+    {
+        canvasGroup.alpha = 1;
+        vThirdPersonController.isPursure = a;
+    }
+
     public void EnableCol_weapon(int a)
     {
         weapon.EnableCol_animationEvent(a);
     }
 
-    private void SwitchToNextState(State state)
-    {
-        currentState = state;
-    }
     private void HandleRecoveryTimer()
     {
         if (currentRecoveryTime > 0)
